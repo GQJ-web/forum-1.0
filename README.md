@@ -29,7 +29,33 @@
 
 只需 3 步，即可在本地跑起整个全栈项目！
 
-### 1. 克隆项目
+### 步骤
+
+###1. 克隆项目
 ```bash
 git clone https://github.com/GQJ-web/forum-1.0.git
 cd forum-backend
+
+### 2. 安装依赖
+npm install
+(注：安装过程中会自动编译 SQLite 的 C++ 依赖，请确保本地有 Node 环境,不支持24版本，22版本已验证可以使用)
+### 3. 启动项目
+npm run dev
+启动成功后，打开浏览器访问 http://localhost:3000 即可看到论坛界面。
+💡 提示：首次启动时，系统会自动在根目录下创建 forum.db 数据库文件，无需手动建库建表！
+📂 核心目录结构
+code
+Text
+├── src/
+│   ├── components/      # React UI 组件 (Login, Register, PostList 等)
+│   ├── AuthContext.tsx  # 全局状态管理 (JWT 鉴权)
+│   ├── types.ts         # TypeScript 类型定义
+│   ├── main.tsx         # 前端入口文件
+│   └── index.css        # 全局样式
+├── server.ts            # 后端主程序入口 (处理 API 与数据库交互)
+├── vite.config.ts       # Vite 构建配置
+├── package.json         # 项目依赖与脚本
+└── .gitignore           # Git 忽略配置 (已排除 node_modules 和 forum.db)
+🌐 部署建议 (Deployment)
+本项目非常适合部署到云服务器。推荐使用 Nginx 进行反向代理：
+只需将 Nginx 的 80 端口代理到本项目的运行端口（如 3000），即可轻松上线，无需单独配置前后端分离的路由。

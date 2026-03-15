@@ -34,7 +34,7 @@
 ###1. 克隆项目
 ```bash
 git clone https://github.com/GQJ-web/forum-1.0.git
-cd forum-backend
+cd forum-1.0
 
 ### 2. 安装依赖
 npm install

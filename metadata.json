@@ -1,0 +1,5 @@
+{
+  "name": "Forum App",
+  "description": "A full-stack forum application with user authentication, post creation, search, filtering, sorting, and pagination.",
+  "requestFramePermissions": []
+}
